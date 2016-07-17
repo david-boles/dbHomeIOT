@@ -16,8 +16,8 @@ public class RoomLightValueGetHandler implements HttpHandler {
 	
 	@Override
 	public void handle(HttpExchange arg0) throws IOException {
-		if(mode == 0) HandlerFs.respondOKHTML(arg0, Integer.toString(random.nextInt(100)));
-		if(mode == 1) HandlerFs.respondOKHTML(arg0, Integer.toString(brightness));
+		if(mode == 0) HandlerFs.respondOKHTML(arg0, Integer.toString(100));
+		if(mode == 1) HandlerFs.respondOKHTML(arg0, Integer.toString(random.nextInt(100)));
 	}
 	
 	public int incrementMode() {
