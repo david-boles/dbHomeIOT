@@ -1,11 +1,13 @@
-package space.davidboles.homeiot.handlers;
+package space.davidboles.homeiot.handlers.roomlight;
 
 import java.io.IOException;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-public class RoomLightHandler implements HttpHandler {
+import space.davidboles.homeiot.handlers.HandlerFs;
+
+public class RoomLightValueGetHandler implements HttpHandler {
 
 	int brightness = 50;//TODO set initial to 100
 	
