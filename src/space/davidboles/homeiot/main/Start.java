@@ -12,7 +12,7 @@ public class Start {
 
 	public static void main(String[] args) {
 		initializeServer();
-		server.createContext("/get/room_light", new RoomLightHandler());
+		server.createContext("/room_light/value/get", new RoomLightHandler());
 	}
 	
 	static void initializeServer() {
