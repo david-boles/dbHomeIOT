@@ -7,7 +7,7 @@ import com.sun.net.httpserver.HttpHandler;
 
 public class RoomLightHandler implements HttpHandler {
 
-	int brightness = 100;
+	int brightness = 50;//TODO set initial to 100
 	
 	@Override
 	public void handle(HttpExchange arg0) throws IOException {
