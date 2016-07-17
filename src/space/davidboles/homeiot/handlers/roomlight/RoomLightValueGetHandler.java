@@ -9,11 +9,20 @@ import space.davidboles.homeiot.handlers.HandlerFs;
 
 public class RoomLightValueGetHandler implements HttpHandler {
 
-	int brightness = 50;//TODO set initial to 100
+	int mode = 1;//Auto control, 0 for full brightness
+	int brightness = 15;//TODO set initial to 100
 	
 	@Override
 	public void handle(HttpExchange arg0) throws IOException {
-		HandlerFs.respondOKHTML(arg0, Integer.toString(brightness));
+		if(mode == 0) HandlerFs.respondOKHTML(arg0, Integer.toString(100));
+		if(mode == 1) HandlerFs.respondOKHTML(arg0, Integer.toString(brightness));
+	}
+	
+	public int incrementMode() {
+		int newMode = this.mode + 1;
+		if(newMode > 1) newMode = 0;
+		mode = newMode;
+		return mode;
 	}
 
 }
