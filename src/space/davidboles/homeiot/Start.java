@@ -2,7 +2,6 @@ package space.davidboles.homeiot;
 
 import java.net.InetSocketAddress;
 
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import space.davidboles.homeiot.handlers.roomlight.RoomLightBootHandler;

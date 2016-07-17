@@ -1,6 +1,7 @@
 package space.davidboles.homeiot.handlers.roomlight;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Random;
 
 import com.sun.net.httpserver.HttpExchange;
@@ -11,7 +12,6 @@ import space.davidboles.homeiot.handlers.HandlerFs;
 public class RoomLightValueGetHandler implements HttpHandler {
 
 	int mode = 1;//Auto control, 0 for full brightness
-	int brightness = 15;//TODO set initial to 100
 	Random random = new Random();
 	
 	@Override
@@ -25,6 +25,18 @@ public class RoomLightValueGetHandler implements HttpHandler {
 		if(newMode > 1) newMode = 0;
 		mode = newMode;
 		return mode;
+	}
+	
+	int calculateMode1() {
+		Calendar curr = Calendar.getInstance();
+		int hour = curr.get(Calendar.HOUR_OF_DAY);
+		int min = curr.get(Calendar.MINUTE);
+		
+		if(hour == 17) {
+			return (min*100)/60;
+		}else {
+			return 0;
+		}
 	}
 
 }
