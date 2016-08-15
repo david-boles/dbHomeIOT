@@ -33,7 +33,7 @@ public class RoomLightValueGetHandler implements HttpHandler {
 		int hour = curr.get(Calendar.HOUR_OF_DAY);
 		int min = curr.get(Calendar.MINUTE);
 		
-		if(hour == 7) {
+		if(hour == 5) {
 			return (min*100)/60;
 		}else {
 			return 0;
